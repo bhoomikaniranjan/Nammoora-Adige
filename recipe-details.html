@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="kn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fff3e0;
+            font-family: Arial, sans-serif;
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .navbar {
+            background-color: #6d4c41 !important;
+        }
+        
+        .recipe-container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ನಮ್ಮೂರ ಅಡಿಗೆ</a>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="recipe-container" id="recipeContent">
+            <h2 class="text-center">Recipe</h2>
+        </div>
+    </div>
+
+    <script>
+        const recipes = {
+            "masala-dosa": {
+                title: "ಮಸಾಲೆ ದೋಸೆ (Masala Dosa)",
+                image: "dose.jpg",
+                ingredients: [
+                    "2 ಕಪ್ ಅಕ್ಕಿ", "1 ಕಪ್ ಉದ್ದಿನ ಬೇಳೆ", "1 ಟೀಚಮಚ ಮೆಂತ್ಯ ಕಾಳು", "1 ಚಮಚ ಉಪ್ಪು",
+                    "1 ಕಪ್ ಬೇಯಿಸಿದ ಆಲೂಗಡ್ಡೆ", "1 ಚಮಚ ಜೀರಿಗೆ", "1 ಚಮಚ ಹಸಿಮೆಣಸಿನಕಾಯಿ ಪೇಸ್ಟ್",
+                    "1/2 ಚಮಚ ಅರಿಶಿಣ", "2 ಚಮಚ ತೆಂಗಿನ ತುರಿ", "1 ಟೀಚಮಚ ನಿಂಬೆ ಹಣ್ಣು ರಸ"
+                ],
+                steps: [
+                    "ಅಕ್ಕಿ, ಉದ್ದಿನ ಬೇಳೆ ಮತ್ತು ಮೆಂತ್ಯ ಕಾಳನ್ನು 6-8 ಗಂಟೆಗಳ ಕಾಲ ನೀರಿನಲ್ಲಿ ನೆನೆಸಿ.",
+                    "ನೆನೆಸಿದ ಮಿಶ್ರಣವನ್ನು ಮಿಕ್ಸಿಯಲ್ಲಿ ಚೆನ್ನಾಗಿ ರುಬ್ಬಿ.",
+                    "ಉಪ್ಪು ಸೇರಿಸಿ ಮತ್ತು 8-10 ಗಂಟೆಗಳ ಕಾಲ ಹುರಿಯಲು ಬಿಡಿ.",
+                    "ಆಲೂಗಡ್ಡೆಯನ್ನು ಬೇಯಿಸಿ, ಮೆಶ್ ಮಾಡಿ, ಅದರಲ್ಲಿ ಜೀರಿಗೆ, ಹಸಿಮೆಣಸಿನಕಾಯಿ ಪೇಸ್ಟ್, ಅರಿಶಿಣ, ಉಪ್ಪು, ತೆಂಗಿನ ತುರಿ, ನಿಂಬೆ ಹಣ್ಣು ರಸ ಸೇರಿಸಿ.",
+                    "ಗ್ಯಾಸ್ಟವ್ ಮೇಲೆ ದೋಸೆ ತವಾ ಇಟ್ಟು ಬಿಸಿ ಮಾಡಿ. ಅದರ ಮೇಲೆ ಎಣ್ಣೆ ಹಚ್ಚಿ.",
+                    "ತಯಾರಿಸಿದ ದೋಸೆ ಹಿಟ್ಟನ್ನು ತವದ ಮೇಲೆ ಹಾಕಿ, ಹಗುರಾಗಿ ಸವರಿ.",
+                    "ಮೇಲಿಂದ ಆಲೂಗಡ್ಡೆ ಮಿಶ್ರಣವನ್ನು ಹಾಕಿ.",
+                    "ದೋಸೆ ಎರಡು ಕಡೆ ಕರಿದ ನಂತರ, ಅದನ್ನು ಒರೆಸಿ, ನಯವಾಗಿ ಮುಚ್ಚಿ.",
+                    "ಹೆಚ್ಚಿದ ತೇಲಿದ ಎಣ್ಣೆ ಬಳಸಿ ಮತ್ತು ಚಟ್ನಿ, ಸಾಂಬಾರ್ ಜತೆಗೆ ಬಡಿಸಿ."
+                ]
+            },
+            "idli": {
+                title: "ಇಡ್ಲಿ (Idli)",
+                image: "idly.jpg",
+                ingredients: ["2 ಕಪ್ ಅಕ್ಕಿ", "1 ಕಪ್ ಉದ್ದಿನ ಬೇಳೆ", "1 ಚಮಚ ಉಪ್ಪು", "1/2 ಚಮಚ ಮೆಂತ್ಯ ಕಾಳು"],
+                steps: [
+                    "ಅಕ್ಕಿ, ಉದ್ದಿನ ಬೇಳೆ, ಮೆಂತ್ಯ ಕಾಳನ್ನು 6 ಗಂಟೆಗಳ ಕಾಲ ನೆನೆಸಿ.",
+                    "ಮಿಕ್ಸಿಯಲ್ಲಿ ಚೆನ್ನಾಗಿ ರುಬ್ಬಿ, ಉಪ್ಪು ಸೇರಿಸಿ.",
+                    "8-10 ಗಂಟೆಗಳ ಕಾಲ ಹುರಿಯಲು ಬಿಡಿ.",
+                    "ಇಡ್ಲಿ ತಟ್ಟೆಗೆ ಎಣ್ಣೆ ಹಚ್ಚಿ, ಹಿಟ್ಟು ತುಂಬಿ ಆವಿಯಲ್ಲಿ ಬೇಯಿಸಿ.",
+                    "ಚಟ್ನಿ ಮತ್ತು ಸಾಂಬಾರ್ ಜತೆಗೆ ಬಡಿಸಿ."
+                ]
+            },
+            "medu-vada": {
+                title: "ಮೆದು ವಡೆ (Medu Vada)",
+                image: "vada.jpg",
+                ingredients: ["1 ಕಪ್ ಉದ್ದಿನ ಬೇಳೆ", "1 ಚಮಚ ಹಸಿಮೆಣಸು ಪೇಸ್ಟ್", "1 ಚಮಚ ಉಪ್ಪು", "1 ಚಮಚ ಜೀರಿಗೆ"],
+                steps: [
+                    "ಉದ್ದಿನ ಬೇಳೆಯನ್ನು 4 ಗಂಟೆಗಳ ಕಾಲ ನೆನೆಸಿ.",
+                    "ಚೆನ್ನಾಗಿ ರುಬ್ಬಿ, ಉಪ್ಪು, ಹಸಿಮೆಣಸು ಪೇಸ್ಟ್, ಜೀರಿಗೆ ಸೇರಿಸಿ.",
+                    "ತಯಾರಿಸಿದ ಹಿಟ್ಟನ್ನು ವಡೆ ಆಕಾರದಲ್ಲಿ ಮಾಡಿರಿ.",
+                    "ಬಿಸಿಯಾದ ಎಣ್ಣೆಯಲ್ಲಿ ಕರಿಯಿರಿ.",
+                    "ಚಟ್ನಿ ಮತ್ತು ಸಾಂಬಾರ್ ಜತೆಗೆ ಬಡಿಸಿ."
+                ]
+            }
+        };
+
+        function loadRecipe() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const recipeKey = urlParams.get("recipe");
+            const recipe = recipes[recipeKey] || recipes["masala-dosa"];
+
+            document.getElementById("recipeContent").innerHTML = `
+                <h2 class="text-center">${recipe.title}</h2>
+                <img src="${recipe.image}" class="img-fluid rounded mb-3" alt="${recipe.title}">
+                <h4>ಹಿಡಿಸುವ ಸಾಮಗ್ರಿಗಳು:</h4>
+                <ul>${recipe.ingredients.map(ing => `<li>${ing}</li>`).join('')}</ul>
+                <h4>ತಯಾರಿಸುವ ವಿಧಾನ:</h4>
+                <ol>${recipe.steps.map(step => `<li>${step}</li>`).join('')}</ol>
+            `;
+        }
+
+        loadRecipe();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
